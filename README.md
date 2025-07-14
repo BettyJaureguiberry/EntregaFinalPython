@@ -55,7 +55,7 @@ Bienvenidos a mi entrega final del curso — una aplicación web tipo blog const
 
 1. Clonar el repo  
    `bash
-   git clone https://github.com/betty/playground-final.git
+   git clone https://github.com/BettyJaureguiberry/EntregaFinalPython
    `
 
 2. Crear entorno virtual  
