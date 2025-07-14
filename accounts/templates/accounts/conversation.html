@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Conversación privada{% endblock %}
+
+{% block content %}
+  <h2>💬 Conversación con {{ contact.username }}</h2>
+
+  <div style="margin-bottom: 2em;">
+    {% for msg in messages %}
+      {% if msg.content|length > 0 and msg.content.strip %}
+        <div class="{% if msg.sender.id == user.id %}bubble-out{% else %}bubble-in{% endif %}">
+          <p>{{ msg.content }}</p>
+          <p class="timestamp">{{ msg.timestamp|date:"H:i · d/m/Y" }}</p>
+        </div>
+      {% endif %}
+    {% empty %}
+      <p>🌌 No hay mensajes aún...</p>
+    {% endfor %}
+  </div>
+
+  <form method="post" class="message-form">
+  {% csrf_token %}
+  <label for="id_message">Enviar mensaje a {{ receiver.username }}:</label>
+  <input type="text" name="message" id="id_message" placeholder="Escribí tu mensaje...">
+  <button type="submit">✉️ Enviar</button>
+</form>
+{% endblock %}

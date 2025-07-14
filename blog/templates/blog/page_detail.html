@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Detalle de la página{% endblock %}
+
+{% block content %}
+  <section style="max-width: 800px; margin: auto; padding: 2em;">
+    <h2 style="color: #ff00cc;">{{ page.title }}</h2>
+    <h4 style="color: #00ffff;">{{ page.subtitle }}</h4>
+    <p style="color: #ccc;">Publicado por {{ page.author.username }} el {{ page.date }}</p>
+
+    {% if page.image %}
+      <img src="{{ page.image.url }}" alt="Imagen de la página" style="width: 100%; max-height: 400px; object-fit: cover; margin: 1em 0;">
+    {% endif %}
+
+    <div class="page-content">
+      {{ page.content|safe }}
+    </div>
+
+    {% if user.is_authenticated and user == page.author %}
+      <div style="margin-top: 2em;">
+        <a href="{% url 'page_update' page.pk %}" style="margin-right: 1em;">✏️ Editar</a>
+        <a href="{% url 'page_delete' page.pk %}">🗑️ Borrar</a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

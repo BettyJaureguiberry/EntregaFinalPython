@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Mensajes galácticos{% endblock %}
+
+{% block content %}
+  <h2>📩 Mensajería rebelde</h2>
+
+  <form method="post" style="margin-bottom: 2em;">
+    {% csrf_token %}
+    <label>Enviar a:</label>
+    <h3>🌌 Contactos</h3>
+        <ul>
+        {% for u in user_data %}
+            <li>
+            <a href="{% url 'conversation' u.id %}">
+                {{ u.username }}
+                {% if u.unread > 0 %}
+                <span class="nav-badge">🔔 {{ u.unread }}</span>
+                {% endif %}
+            </a>
+            </li>
+        {% endfor %}
+        </ul><br>
+    <label>Mensaje:</label><br>
+    <textarea name="content" rows="3" cols="40"></textarea><br>
+    <button type="submit">🚀 Enviar</button>
+  </form>
+
+  <h3>📥 Mensajes recibidos</h3>
+  {% for msg in messages %}
+  <div class="{% if msg.sender == user %}bubble-out{% else %}bubble-in{% endif %}">
+    <p><strong style="color: #00ffff;">{{ msg.sender.username }}</strong></p>
+    <p>{{ msg.content }}</p>
+    <p class="timestamp">{{ msg.timestamp|date:"H:i · d/m/Y" }}</p>
+  </div>
+{% empty %}
+  <p>🌌 No hay mensajes en el sistema aún...</p>
+{% endfor %}
+
+
+{% endblock %}

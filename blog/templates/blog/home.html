@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio | Si no es épico, no se compila{% endblock %}
+
+{% block content %}
+  <main class="center-screen">
+  <section class="epic-intro">
+    <h1 class="main-title">sudo make epic-project</h1>
+    <h2 class="subtitle">Si no es épico, no se compila</h2>
+    <p class="intro-text">Este blog no es solo una entrega. Es un statement con código, estética y humor.</p>
+    <p class="intro-text">Tu sesión ya está activa. Prepárate para navegar entre ideas, perfiles y estrategias que no piden permiso.</p>
+    <a href="{% url 'profile' %}" class="cta-button">Explorar mi perfil</a>
+  </section>
+</main>
+{% endblock %}

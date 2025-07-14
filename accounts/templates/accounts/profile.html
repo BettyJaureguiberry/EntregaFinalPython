@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil épico{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+  <div class="profile-card">
+    {% if user.profile and user.profile.avatar %}
+      <img src="{{ user.profile.avatar.url }}" alt="Avatar" class="avatar">
+    {% else %}
+      <img src="/media/avatars/default.png" alt="Avatar" class="avatar">
+    {% endif %}
+
+    <h2 class="username">{{ user.username }}</h2>
+    <p class="bio">Biografía: Si no es épico, no se compila</p>
+
+    {% if user.profile.bio %}
+      <p class="bio">{{ user.profile.bio }}</p>
+    {% endif %}
+
+    <a href="{% url 'edit_profile' %}" class="edit-button">Refactorizar perfil</a>
+  </div>
+</div>
+{% endblock %}

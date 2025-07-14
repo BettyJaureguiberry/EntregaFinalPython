@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Unirse a la épica{% endblock %}
+
+{% block content %}
+  <h1>Bienvenida al compilador de rebeldía</h1>
+
+  {% if form.errors %}
+    <div style="background-color: #2a0000; padding: 1em; margin-bottom: 1em; border-radius: 8px;">
+      {% for field in form %}
+        {% for error in field.errors %}
+          <p style="color: #ff3333;"><strong>{{ field.label }}:</strong> {{ error }}</p>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <p style="color: #ff3333;">{{ error }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="post" enctype="multipart/form-data" style="max-width: 500px;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="background-color: #ff00cc; color: white; padding: 0.5em 2em; border: none; border-radius: 6px;">Activar cuenta</button>
+  </form>
+{% endblock %}

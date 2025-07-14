@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Desconectada del sistema{% endblock %}
+
+{% block content %}
+  <section style="text-align: center; padding: 3em;">
+    <h2 style="color: #ff00cc;">Sesión cerrada con éxito</h2>
+    <p style="color: #ccc;">
+      Tu código rebelde está a salvo. Volvé cuando quieras... el sistema sigue escuchando 🪩
+    </p>
+    <a href="{% url 'home' %}" style="color: #00ffff;">↩️ Regresar al inicio</a>
+  </section>
+{% endblock %}

@@ -1,0 +1,26 @@
+# Archivos de base de datos
+db.sqlite3
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Archivos temporales
+*.log
+*.pot
+*.pyc
+*.swp
+
+# Carpeta media (imágenes subidas por usuarios)
+media/
+
+# Archivos de entorno
+.env
+*.env
+
+# Configuración local de IDEs
+.vscode/
+.idea/
+
+# Archivos compilados o cacheados por Django
+staticfiles/

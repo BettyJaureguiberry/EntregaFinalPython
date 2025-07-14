@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Refactorizar Perfil{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+  <div class="profile-card">
+    <h2 class="username">Refactorizando tu perfil</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <div class="form-group">
+        <label for="id_bio">💬 Biografía</label>
+        {{ form.bio }}
+      </div>
+
+      <div class="form-group">
+        <label for="id_avatar">🖼️ Avatar</label>
+        {{ form.avatar }}
+      </div>
+
+      <button type="submit" class="edit-button">💾 Guardar cambios</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

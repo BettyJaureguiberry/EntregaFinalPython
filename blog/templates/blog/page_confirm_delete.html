@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}¿Eliminar esta página?{% endblock %}
+
+{% block content %}
+  <section style="max-width: 600px; margin: auto; background-color: #1a1a1a; padding: 2em; border-radius: 10px;">
+    <h2 style="color: #ff00cc; text-align: center;">¿Estás segura de borrar esta joya?</h2>
+    <p style="color: #ccc; text-align: center;">
+      Esta acción no se puede deshacer. El universo perderá esta página para siempre.
+    </p>
+    <form method="post" style="text-align: center; margin-top: 2em;">
+      {% csrf_token %}
+      <button type="submit" style="background-color: #ff0033; color: white; padding: 0.6em 2em; border: none; border-radius: 4px;">Sí, borrar</button>
+      <a href="{% url 'page_detail' page.pk %}" style="margin-left: 2em; color: #00ffff;">Cancelar</a>
+    </form>
+  </section>
+{% endblock %}

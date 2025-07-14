@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Contenido épico{% endblock %}
+
+{% block content %}
+  <section class="page-list" style="max-width: 800px; margin: 2em auto;">
+    <h2 style="text-align: center; color: #ff00cc;">🧠 Compilaciones con personalidad</h2>
+
+    {% if pages %}
+      {% for page in pages %}
+        <article style="border-bottom: 1px solid #00ffff; padding: 1em 0;">
+          <h3 style="color: #00ffff;">{{ page.title }}</h3>
+          <p style="color: #ccc;">{{ page.subtitle }}</p>
+          <a href="{% url 'page_detail' page.pk %}" style="color: #ff00cc;">Leer más →</a>
+        </article>
+      {% endfor %}
+    {% else %}
+      <p style="text-align: center; color: #999;">No hay páginas aún. ¡Creá la primera y marcá historia!</p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+      <div style="text-align: right; margin-top: 2em;">
+        <a href="{% url 'page_create' %}" class="cta-button">Crear nueva compilacion</a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}
