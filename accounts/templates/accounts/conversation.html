@@ -20,7 +20,7 @@
   <form method="post" class="message-form">
   {% csrf_token %}
   <label for="id_message">Enviar mensaje a {{ receiver.username }}:</label>
-  <input type="text" name="message" id="id_message" placeholder="Escribí tu mensaje...">
+  <input type="text" name="content" id="id_message" placeholder="Escribí tu mensaje...">
   <button type="submit">✉️ Enviar</button>
 </form>
 {% endblock %}

@@ -87,7 +87,7 @@ Este proyecto fue creado con actitud técnica, glow narrativo y enfoque visual. 
 No se incluye la base de datos ni las imágenes en media/.  
 
 > ✉️ Contacto técnico: bettyjaureguiberry@gmail.com  
-> 🎥 Demo video disponible en el repositorio
+> 🎥 Demo video entregado por la plataforma 
 
 ---
 

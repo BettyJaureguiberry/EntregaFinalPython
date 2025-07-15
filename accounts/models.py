@@ -16,7 +16,8 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)
 
-    # No __str__ aquí
+    def __str__(self):
+        return f"Mensaje de {self.sender.username}"
 
 
 
