@@ -55,8 +55,7 @@ Bienvenidos a mi entrega final del curso — una aplicación web tipo blog const
 
 1. Clonar el repo  
    `bash
-   git clone https://github.com/BettyJaureguiberry/EntregaFinalPython
-   `
+   git clone https://github.com/BettyJaureguiberry/EntregaFinalPython/tree/master
 
 2. Crear entorno virtual  
    `bash
