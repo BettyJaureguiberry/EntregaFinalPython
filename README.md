@@ -1,4 +1,7 @@
-🪩 Playground Final Project · by Betty
+🪩 Playground Final Project · by Betty Jaureguiberry
+Curso Python Coderhouse
+Comisión 78110
+Profesor Alan Prestia
 
 Bienvenidos a mi entrega final del curso — una aplicación web tipo blog construida con Django que compila estética, narrativa técnica y funcionalidades completas.
 
